@@ -1,7 +1,7 @@
 package com.student_information.controller;
 
-import com.student_information.payload.AllInformationDto;
-import com.student_information.service.AllInformationService;
+import com.student_information.payload.StudentDto;
+import com.student_information.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/student")
 public class StudentController {
     @Autowired
-    private AllInformationService allInformationService;
-
+    private StudentService studentService;
     @GetMapping("/{id}")
-    public ResponseEntity<AllInformationDto> findAllInformationById(@PathVariable("id") long id){
-        AllInformationDto dto = allInformationService.getAllInformationById(id);
+    public ResponseEntity<StudentDto> getStudentById(@PathVariable("id") long id){
+        StudentDto dto = studentService.getStudentById(id);
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 }

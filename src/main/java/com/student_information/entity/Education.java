@@ -1,31 +1,23 @@
 package com.student_information.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Table(name= "STU_EDUCATION")
+@Getter
+@Setter
+@Table(name= "stu_education")
 public class Education {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "EDU_ID")
-	private long id;
-	private String board;
-	private String exam;
-	@OneToOne
-	@JoinColumn(name= "STU_ID")
-	private Student student;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "edu_id")
+    private long id;
+    private String board;
+    private String exam;
 }

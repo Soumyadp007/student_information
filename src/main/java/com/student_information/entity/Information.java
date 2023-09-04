@@ -1,32 +1,24 @@
 package com.student_information.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name= "STU_INFORMATION")
+@Getter
+@Setter
+@Table(name= "stu_info")
 public class Information {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "INFO_ID")
-	private long id;
-	private String name;
-	private String email;
-	private long mobile;
-	@OneToOne
-	@JoinColumn(name= "STU_ID")
-	private Student student;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "info_id")
+    private long id;
+    private String email;
+    private long mobile;
+    private String name;
 }

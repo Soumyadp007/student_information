@@ -2,7 +2,6 @@ package com.student_information.payload;
 
 import com.student_information.entity.Education;
 import com.student_information.entity.Information;
-import com.student_information.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +11,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AllInformationDto {
-    private Student student;
+public class StudentDto {
+    private long id;
+    private String name;
+    private String classes;
+    private int roll;
     private Information info;
     private Education edu;
 }
